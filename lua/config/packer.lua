@@ -12,4 +12,25 @@ return require('packer').startup(function(use)
 }
   -- Kanagawa theme.
   use 'rebelot/kanagawa.nvim'
-end)
+
+  -- Treesitter.
+  use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+
+  -- Undotree.
+  use 'mbbill/undotree'
+
+  -- Status line.
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
+  -- nvim-tree.
+   use {
+  'nvim-tree/nvim-tree.lua',
+  requires = {
+    'nvim-tree/nvim-web-devicons', 
+  },
+}
+
+end) 
