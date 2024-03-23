@@ -17,7 +17,7 @@ require('lualine').setup {
       winbar = 1000,
     }
   },
-  sections = {
+  sections= {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
