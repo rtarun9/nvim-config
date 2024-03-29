@@ -45,4 +45,10 @@ return require('packer').startup(function(use)
     use {
         'akinsho/toggleterm.nvim',
     }
+
+    -- todo-comments.
+    use {
+        'folke/todo-comments.nvim',
+        requires = { 'nvim-lua/plenary.nvim' }
+    }
 end)
