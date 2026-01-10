@@ -1,5 +1,7 @@
 vim.opt.shiftwidth=4
 vim.opt.termguicolors = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 vim.cmd("colorscheme lunaperche")
 
 -- Setup for lazy.nvim
