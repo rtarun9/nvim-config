@@ -2,7 +2,6 @@ vim.opt.shiftwidth=4
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.cmd("colorscheme lunaperche")
 
 -- Setup for lazy.nvim
 -- https://lazy.folke.io/installation
@@ -48,11 +47,13 @@ require("lazy").setup({
 	    'nvim-treesitter/nvim-treesitter',
 	    lazy = false,
 	    build = ':TSUpdate'
-	}
+	},
+	{
+	    "ianklapouch/wildberries.nvim",
+	    name = "wildberries",
+	},
     },
-    -- Configure any other settings here. See the documentation for more details.
-    -- colorscheme that will be used when installing plugins.
-    install = { colorscheme = { "habamax" } },
+    install = { colorscheme = { "wildberries" } },
     -- automatically check for plugin updates
     checker = { enabled = true },
 })
@@ -68,3 +69,4 @@ require'nvim-treesitter.config'.setup {
 }
 
 vim.keymap.set("n", "<C-n>", "<Cmd>Neotree toggle<CR>")
+vim.cmd.colorscheme "wildberries"
