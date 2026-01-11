@@ -43,6 +43,11 @@ require("lazy").setup({
 		"nvim-tree/nvim-web-devicons", -- optional, but recommended
 	    },
 	    lazy = false, -- neo-tree will lazily load itself
+	},
+	{
+	    'nvim-treesitter/nvim-treesitter',
+	    lazy = false,
+	    build = ':TSUpdate'
 	}
     },
     -- Configure any other settings here. See the documentation for more details.
@@ -51,5 +56,15 @@ require("lazy").setup({
     -- automatically check for plugin updates
     checker = { enabled = true },
 })
+
+require'nvim-treesitter.config'.setup {
+    ensure_installed = { 'c', 'cpp', 'python' },
+        highlight = {
+        enable = true, -- Enable syntax highlighting
+    },
+    indent = {
+        enable = true, -- Enable smart indentation
+    },
+}
 
 vim.keymap.set("n", "<C-n>", "<Cmd>Neotree toggle<CR>")
