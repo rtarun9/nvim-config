@@ -52,6 +52,12 @@ require("lazy").setup({
 	    "ianklapouch/wildberries.nvim",
 	    name = "wildberries",
 	},
+	{
+	    "nvzone/floaterm",
+	    dependencies = "nvzone/volt",
+	    opts = {},
+	    cmd = "FloatermToggle",
+	}          
     },
     install = { colorscheme = { "wildberries" } },
     -- automatically check for plugin updates
@@ -69,4 +75,5 @@ require'nvim-treesitter.config'.setup {
 }
 
 vim.keymap.set("n", "<C-n>", "<Cmd>Neotree toggle<CR>")
+vim.keymap.set("n", "<C-f>", "<Cmd>FloatermToggle<CR>")
 vim.cmd.colorscheme "wildberries"
