@@ -2,7 +2,7 @@
 
 # Pre-reqs
 
-Luarocks: https://luarocks.github.io/luarocks/releases/
-Treesitter-cli: https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md
-Rust: https://rustup.rs/
+* Luarocks: https://luarocks.github.io/luarocks/releases/
+* Treesitter-cli: https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md
+* Rust: https://rustup.rs/
     - run *cargo install --locked tree-sitter-cli*

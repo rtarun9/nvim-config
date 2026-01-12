@@ -35,6 +35,13 @@ require("lazy").setup({
 	{ "folke/todo-comments.nvim", opts = {} },
 	{
 	    "nvim-neo-tree/neo-tree.nvim",
+	    opts = {
+		filesystem = {
+		  filtered_items = {
+		    visible = true,
+		  },
+		},
+	      },
 	    branch = "v3.x",
 	    dependencies = {
 		"nvim-lua/plenary.nvim",
