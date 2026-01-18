@@ -56,8 +56,9 @@ require("lazy").setup({
 	    build = ':TSUpdate'
 	},
 	{
-	    "ianklapouch/wildberries.nvim",
-	    name = "wildberries",
+	    "scottmckendry/cyberdream.nvim",
+	    lazy = false,
+	    priority = 1000,
 	},
 	{
 	    "nvzone/floaterm",
@@ -66,7 +67,7 @@ require("lazy").setup({
 	    cmd = "FloatermToggle",
 	}          
     },
-    install = { colorscheme = { "wildberries" } },
+    install = { colorscheme = { "cyberdream" } },
     -- automatically check for plugin updates
     checker = { enabled = true },
 })
@@ -81,6 +82,15 @@ require'nvim-treesitter.config'.setup {
     },
 }
 
+require("cyberdream").setup({
+    variant = "default", 
+
+    -- Enable transparent background
+    transparent = true,
+})
+
+
+
 vim.keymap.set("n", "<C-n>", "<Cmd>Neotree toggle<CR>")
 vim.keymap.set("n", "<C-f>", "<Cmd>FloatermToggle<CR>")
-vim.cmd.colorscheme "wildberries"
+vim.cmd.colorscheme "cyberdream"
