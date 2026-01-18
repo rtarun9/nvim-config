@@ -65,7 +65,10 @@ require("lazy").setup({
 	    dependencies = "nvzone/volt",
 	    opts = {},
 	    cmd = "FloatermToggle",
-	}          
+	},
+	{
+	    'neovim/nvim-lspconfig'
+	},
     },
     install = { colorscheme = { "cyberdream" } },
     -- automatically check for plugin updates
@@ -93,4 +96,8 @@ require("cyberdream").setup({
 
 vim.keymap.set("n", "<C-n>", "<Cmd>Neotree toggle<CR>")
 vim.keymap.set("n", "<C-f>", "<Cmd>FloatermToggle<CR>")
+vim.keymap.set("t", "<C-f>", "<Cmd>FloatermToggle<CR>")
 vim.cmd.colorscheme "cyberdream"
+
+vim.lsp.enable({"clangd"})
+vim.diagnostic.config({ virtual_text = true })
