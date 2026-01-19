@@ -101,3 +101,18 @@ vim.cmd.colorscheme "cyberdream"
 
 vim.lsp.enable({"clangd"})
 vim.diagnostic.config({ virtual_text = true })
+
+-- Auto format on save
+-- Wheneever a LSP attaches to a buffer (for example when file is opened),
+-- clear all existings commands from autocmds in the 'lsp' group.
+-- Then, before saving the buffer, format it.
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    vim.api.nvim_create_autocmd("BufWritePost", {
+      buffer = args.buf,
+      callback = function()
+        vim.lsp.buf.format({ async = false, id = args.data.client_id })
+      end,
+    })
+  end,
+})
