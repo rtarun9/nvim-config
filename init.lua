@@ -154,6 +154,16 @@ do
 			vim.lsp.buf.format({ timeout_ms = 500 })
 		end,
 	})
+
+	-- .hlsl and .hlsli should have highlighting.
+	-- by default, neovim considers thier filetypes to be conf, which has no highlighting.
+	vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+		desc = "Highlight hlsl/hlsli by setting filetype to hlsl rather than conf",
+		pattern = { "*.hlsl", "*.hlsli" },
+		callback = function()
+			vim.bo.filetype = "hlsl"
+		end,
+	})
 end
 
 -- ============================================================
